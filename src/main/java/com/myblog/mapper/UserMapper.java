@@ -1,7 +1,8 @@
-package com.myblog.myblog.mapper;
+package com.myblog.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.myblog.myblog.entity.UserEntity;
+import com.myblog.entity.UserEntity;
+
 
 /**
  * @Author:zyk
