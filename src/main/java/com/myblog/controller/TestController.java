@@ -27,24 +27,24 @@ public class TestController {
         return "index";
     }
 
-    /**
-     * 分页 PAGE
-     */
-    @GetMapping("/test")
-    public Page<UserEntity> test() {
-        return userService.selectPage(new Page<UserEntity>(0, 12));
-    }
-
-    /**
-     * 增删改查 CRUD
-     */
-    @GetMapping("/test2")
-    public UserEntity test2() {
-        UserEntity user = new UserEntity();
-        user.setDeptname("飒飒");
-        user.setUsername("dDSDS");
-        user.setCreatetime(new Date());
-        userService.insert(user);
-        return user;
-    }
+//    /**
+//     * 分页 PAGE
+//     */
+//    @GetMapping("/test")
+//    public Page<UserEntity> test() {
+//        return userService.selectPage(new Page<UserEntity>(0, 12));
+//    }
+//
+//    /**
+//     * 增删改查 CRUD
+//     */
+//    @GetMapping("/test2")
+//    public UserEntity test2() {
+//        UserEntity user = new UserEntity();
+//        user.setDeptname("飒飒");
+//        user.setUsername("dDSDS");
+//        user.setCreatetime(new Date());
+//        userService.insert(user);
+//        return user;
+//    }
 }

@@ -1,203 +1,118 @@
 package com.myblog.common.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.alibaba.druid.support.http.StatViewServlet;
-import com.alibaba.druid.support.http.WebStatFilter;
-import com.baomidou.mybatisplus.MybatisConfiguration;
-import com.baomidou.mybatisplus.MybatisXMLLanguageDriver;
 import com.baomidou.mybatisplus.entity.GlobalConfiguration;
-import com.baomidou.mybatisplus.enums.DBType;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean;
-import com.baomidou.mybatisplus.spring.boot.starter.SpringBootVFS;
-import org.apache.ibatis.mapping.DatabaseIdProvider;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.plugin.Interceptor;
-import org.mybatis.spring.annotation.MapperScan;
-import org.mybatis.spring.boot.autoconfigure.MybatisProperties;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.bind.RelaxedPropertyResolver;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.context.EnvironmentAware;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.mapper.MapperScannerConfigurer;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
-import org.springframework.core.io.DefaultResourceLoader;
-import org.springframework.core.io.ResourceLoader;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.util.ObjectUtils;
-import org.springframework.util.StringUtils;
-
-import javax.sql.DataSource;
-import java.sql.SQLException;
 
 @Configuration
-@EnableConfigurationProperties
-@MapperScan("com.myblog.mapper")
-public class MybatisPlusConfig implements EnvironmentAware {
-    private Logger logger =  LoggerFactory.getLogger(this.getClass());
+public class MybatisPlusConfig {
 
-//    @Autowired
-    private Environment environment;
-    private RelaxedPropertyResolver propertyResolver;
-//    @Autowired
-//    private DataSource dataSource;
-    @Autowired
-    private MybatisProperties properties;
-    @Autowired
-    private ResourceLoader resourceLoader = new DefaultResourceLoader();
-    @Autowired(required = false)
-    private Interceptor[] interceptors;
-    @Autowired(required = false)
-    private DatabaseIdProvider databaseIdProvider;
 
-    @Override
-    public void setEnvironment(Environment environment) {
-        this.environment = environment;
-        this.propertyResolver = new RelaxedPropertyResolver(environment,"spring.datasource.");
+    private static final Log log = LogFactory.getLog(MybatisPlusConfig.class);
+    /**
+     * 主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+     */
+    private Integer idType = 1;
+
+    /**
+     * 字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+     */
+    private Integer fieldStrategy = 2;
+
+    /**
+     * 驼峰下划线转换
+     */
+    private Boolean dbColumnUnderline = true;
+
+    /**
+     * 刷新mapper 调试神器
+     */
+    private Boolean isRefresh = true;
+
+    /**
+     * 数据库大写下划线转换
+     */
+    private Boolean isCapitalMode = true;
+
+    /**
+     * 逻辑删除配置
+     */
+    private String logicDeleteValue = "0";
+
+    /**
+     * 逻辑删除配置
+     */
+    private String logicNotDeleteValue = "1";
+
+    @Bean(name = "globalConfig")
+    public GlobalConfiguration globalConfig() {
+        log.info("初始化---globalConfig");
+        GlobalConfiguration globalConfiguration = new GlobalConfiguration();
+        globalConfiguration.setIdType(idType);
+        globalConfiguration.setDbColumnUnderline(dbColumnUnderline);
+        globalConfiguration.setCapitalMode(isCapitalMode);
+        globalConfiguration.setRefresh(isRefresh);
+        return globalConfiguration;
     }
 
-    /**
-     * @DESCRIPTION : MYBATIS-PLUS SQL执行效率插件【生产环境可以关闭】
-     * ---------------------------------
-     * @Author : Liang.Guangqing
-     * @Date : Create in 2017/9/19 13:57
-     */
-    /*@Bean
-    public PerformanceInterceptor performanceInterceptor() {
-        return new PerformanceInterceptor();
-    }*/
-
-    /**
-     * 配置DataSource
-     * @return
-     * @throws SQLException
-     */
-    @Bean(initMethod = "init", destroyMethod = "close")
-    public DruidDataSource druidDataSource() throws SQLException {
-//        this.propertyResolver = new RelaxedPropertyResolver(environment, "spring.datasource.");
-        logger.info("====================注入druid!====================");
-        DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setDriverClassName(propertyResolver.getProperty("driver-class-name"));
-        dataSource.setUrl(propertyResolver.getProperty("url"));
-        dataSource.setUsername(propertyResolver.getProperty("username"));
-        dataSource.setPassword(propertyResolver.getProperty("password"));
-        dataSource.setInitialSize(Integer.parseInt(propertyResolver.getProperty("initialSize")));
-        dataSource.setMinIdle(Integer.parseInt(propertyResolver.getProperty("minIdle")));
-        dataSource.setMaxActive(Integer.parseInt(propertyResolver.getProperty("maxActive")));
-        dataSource.setMaxWait(Integer.parseInt(propertyResolver.getProperty("maxWait")));
-        dataSource.setTimeBetweenEvictionRunsMillis(Long.parseLong(propertyResolver.getProperty("timeBetweenEvictionRunsMillis")));
-        dataSource.setMinEvictableIdleTimeMillis(Long.parseLong(propertyResolver.getProperty("minEvictableIdleTimeMillis")));
-        dataSource.setValidationQuery(propertyResolver.getProperty("validationQuery"));
-        dataSource.setTestWhileIdle(Boolean.parseBoolean(propertyResolver.getProperty("testWhileIdle")));
-        dataSource.setTestOnBorrow(Boolean.parseBoolean(propertyResolver.getProperty("testOnBorrow")));
-        dataSource.setTestOnReturn(Boolean.parseBoolean(propertyResolver.getProperty("testOnReturn")));
-        dataSource.setPoolPreparedStatements(Boolean.parseBoolean(propertyResolver.getProperty("poolPreparedStatements")));
-        dataSource.setMaxPoolPreparedStatementPerConnectionSize(Integer.parseInt(propertyResolver.getProperty("maxPoolPreparedStatementPerConnectionSize")));
+    @Bean(name = "sqlSessionFactory")
+    public SqlSessionFactory sqlSessionFactory(@Qualifier(value = "globalConfig") GlobalConfiguration globalConfiguration,
+                                               @Qualifier(value = "basisDataSource") DruidDataSource dataSource) {
+        log.info("初始化---sqlSessionFactory");
+        String mapperLocations = "classpath*:mapping/*.xml";
+        String configLocation = "mybatis-sqlconfig.xml";
+        String typeAliasesPackage = "com.myblog.myblog.entity";
+        MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
+        //数据源
+        sqlSessionFactory.setDataSource(dataSource);
+        //全局配置
+        sqlSessionFactory.setGlobalConfig(globalConfiguration);
+        Interceptor[] interceptors = {new PaginationInterceptor()};
+        //分页插件
+        sqlSessionFactory.setPlugins(interceptors);
+        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try {
-            dataSource.setFilters(propertyResolver.getProperty("filters"));
-        } catch (SQLException e) {
+            //自动扫描mapper.xml config 别名
+            sqlSessionFactory.setMapperLocations(resolver.getResources(mapperLocations));
+            sqlSessionFactory.setConfigLocation(resolver.getResource(configLocation));
+            sqlSessionFactory.setTypeHandlersPackage(typeAliasesPackage);
+            return sqlSessionFactory.getObject();
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return dataSource;
-    }
-
-    @Bean
-    public PlatformTransactionManager transactionManager() throws SQLException {
-        return new DataSourceTransactionManager(druidDataSource());
-    }
-    /**
-     * @Description : mybatis-plus分页插件
-     * ---------------------------------
-     * @Author : Liang.Guangqing
-     * @Date : Create in 2017/9/19 13:59
-     */
-    @Bean
-    public PaginationInterceptor paginationInterceptor() {
-        PaginationInterceptor page = new PaginationInterceptor();
-        page.setDialectType("mysql");
-        return page;
+        return null;
     }
 
     /**
-     * 这里全部使用mybatis-autoconfigure 已经自动加载的资源。不手动指定
-     * 配置文件和mybatis-boot的配置文件同步
-     * @return
+     * mabtis动态扫描
      */
     @Bean
-    public MybatisSqlSessionFactoryBean mybatisSqlSessionFactoryBean() throws SQLException {
-        MybatisSqlSessionFactoryBean mybatisPlus = new MybatisSqlSessionFactoryBean();
-        mybatisPlus.setDataSource(druidDataSource());
-        mybatisPlus.setVfs(SpringBootVFS.class);
-        if (StringUtils.hasText(this.properties.getConfigLocation())) {
-            mybatisPlus.setConfigLocation(this.resourceLoader.getResource(this.properties.getConfigLocation()));
-        }
-        mybatisPlus.setConfiguration(properties.getConfiguration());
-        if (!ObjectUtils.isEmpty(this.interceptors)) {
-            mybatisPlus.setPlugins(this.interceptors);
-        }
-        // MP 全局配置，更多内容进入类看注释
-        GlobalConfiguration globalConfig = new GlobalConfiguration();
-        globalConfig.setDbType(DBType.MYSQL.name());
-        // ID 策略 AUTO->`0`("数据库ID自增") INPUT->`1`(用户输入ID") ID_WORKER->`2`("全局唯一ID") UUID->`3`("全局唯一ID")
-        globalConfig.setIdType(2);
-        mybatisPlus.setGlobalConfig(globalConfig);
-        MybatisConfiguration mc = new MybatisConfiguration();
-        mc.setDefaultScriptingLanguage(MybatisXMLLanguageDriver.class);
-        mybatisPlus.setConfiguration(mc);
-        if (this.databaseIdProvider != null) {
-            mybatisPlus.setDatabaseIdProvider(this.databaseIdProvider);
-        }
-        if (StringUtils.hasLength(this.properties.getTypeAliasesPackage())) {
-            mybatisPlus.setTypeAliasesPackage(this.properties.getTypeAliasesPackage());
-        }
-        if (StringUtils.hasLength(this.properties.getTypeHandlersPackage())) {
-            mybatisPlus.setTypeHandlersPackage(this.properties.getTypeHandlersPackage());
-        }
-        if (!ObjectUtils.isEmpty(this.properties.resolveMapperLocations())) {
-            mybatisPlus.setMapperLocations(this.properties.resolveMapperLocations());
-        }
-        return mybatisPlus;
+    public MapperScannerConfigurer mapperScannerConfigurer() {
+        log.info("初始化MapperScannerConfigurer");
+        MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
+        String basePackage = "com.myblog.myblog.mapper";
+        mapperScannerConfigurer.setBasePackage(basePackage);
+        return mapperScannerConfigurer;
     }
 
     /**
-     * 注册一个StatViewServlet
-     * @return
+     * 配置事务管理器
      */
-    @Bean
-    public ServletRegistrationBean DruidStatViewServle(){
-        //org.springframework.boot.context.embedded.ServletRegistrationBean提供类的进行注册.
-        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),"/druid/*");
-        //添加初始化参数：initParams
-        //白名单：
-        // servletRegistrationBean.addInitParameter("allow","127.0.0.1");
-        //IP黑名单 (存在共同时，deny优先于allow) : 如果满足deny的话提示:Sorry, you are not permitted to view this page.
-        // servletRegistrationBean.addInitParameter("deny","192.168.1.73");
-        //登录查看信息的账号密码.
-        servletRegistrationBean.addInitParameter("loginUsername","admin");
-        servletRegistrationBean.addInitParameter("loginPassword","admin");
-        //是否能够重置数据.
-        servletRegistrationBean.addInitParameter("resetEnable","false");
-        return servletRegistrationBean;
+    @Bean(name = "transactionManager")
+    public DataSourceTransactionManager transactionManager(@Qualifier(value = "basisDataSource") DruidDataSource dataSource) {
+        log.info("DataSourceTransactionManager");
+        return new DataSourceTransactionManager(dataSource);
     }
-
-    /**
-     * 注册一个：filterRegistrationBean
-     *
-     * @return
-     */
-    @Bean
-    public FilterRegistrationBean druidStatFilter(){
-        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new WebStatFilter());
-        //添加过滤规则.
-        filterRegistrationBean.addUrlPatterns("/*");
-        //添加不需要忽略的格式信息.
-        filterRegistrationBean.addInitParameter("exclusions","*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
-        return filterRegistrationBean;
-    }
-
 }

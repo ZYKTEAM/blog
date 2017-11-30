@@ -1,8 +1,11 @@
-package com.myblog.mapper;
+package com.myblog.myblog.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.myblog.entity.UserEntity;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
 
 /**
  * @Author:zyk
@@ -10,6 +13,14 @@ import com.myblog.entity.UserEntity;
  * @Date:Create in 14:44 2017/11/29
  * @Modified By:
  **/
-public interface UserMapper extends BaseMapper<UserEntity>{
+@Mapper
+public interface UserMapper extends BaseMapper<UserEntity> {
 
+    /**
+     * 查询全部用户
+     *
+     * @return
+     */
+    @Select("queryList")
+    List<UserEntity> queryList();
 }

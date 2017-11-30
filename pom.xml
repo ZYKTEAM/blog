@@ -35,6 +35,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>Mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -67,6 +72,13 @@
             <artifactId>mybatis-plus</artifactId>
             <version>2.1.2</version>
         </dependency>
+
+        <!--redis集成-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+        </dependency>
+
         <!--数据库相关-->
         <dependency>
             <groupId>Mysql</groupId>
