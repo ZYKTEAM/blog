@@ -1,4 +1,4 @@
-package com.myblog.myblog.mapper;
+package com.myblog.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.myblog.entity.UserEntity;
@@ -21,6 +21,5 @@ public interface UserMapper extends BaseMapper<UserEntity> {
      *
      * @return
      */
-    @Select("queryList")
     List<UserEntity> queryList();
 }
