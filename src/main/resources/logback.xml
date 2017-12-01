@@ -19,6 +19,7 @@
             <charset>utf8</charset>
         </encoder>
     </appender>
+
     <!-- 输出到文件 -->
     <appender name="fileLog"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
