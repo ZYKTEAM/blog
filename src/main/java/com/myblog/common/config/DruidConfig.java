@@ -1,13 +1,16 @@
 package com.myblog.common.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.sql.SQLException;
 
@@ -18,6 +21,7 @@ import java.sql.SQLException;
  * @Modified By:
  **/
 @Configuration
+@EnableTransactionManagement
 public class DruidConfig {
 
     private static final Log log = LogFactory.getLog(DruidConfig.class);
@@ -82,7 +86,7 @@ public class DruidConfig {
         return filterRegistrationBean;
     }
 
-    @Bean(name = "basisDataSource", destroyMethod = "close", initMethod = "init")
+    @Bean(name = "dataSource", destroyMethod = "close", initMethod = "init")
     public DruidDataSource druidDataSource() {
         log.info("初始化-------druid连接池");
         DruidDataSource datasource = new DruidDataSource();
@@ -109,4 +113,16 @@ public class DruidConfig {
         }
         return datasource;
     }
+    @Bean
+    public ServletRegistrationBean druidServlet() {
+        ServletRegistrationBean reg = new ServletRegistrationBean();
+        reg.setServlet(new StatViewServlet());
+        reg.addUrlMappings("/druid/*");
+        //reg.addInitParameter("allow", "127.0.0.1");//白名单(没有配置或者为空，则允许所有访问)
+        //reg.addInitParameter("deny","");//黑名单
+        reg.addInitParameter("loginUsername", "admin");
+        reg.addInitParameter("loginPassword", "admin");
+        return reg;
+    }
+
 }

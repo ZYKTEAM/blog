@@ -1,7 +1,6 @@
 package com.myblog.service;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.myblog.entity.DeptEntity;
 import com.myblog.entity.UserEntity;
 import com.myblog.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;

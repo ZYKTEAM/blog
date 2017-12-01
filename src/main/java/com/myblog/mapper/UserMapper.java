@@ -2,8 +2,6 @@ package com.myblog.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.myblog.entity.UserEntity;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -13,7 +11,7 @@ import java.util.List;
  * @Date:Create in 14:44 2017/11/29
  * @Modified By:
  **/
-@Mapper
+//@Mapper
 public interface UserMapper extends BaseMapper<UserEntity> {
 
     /**
