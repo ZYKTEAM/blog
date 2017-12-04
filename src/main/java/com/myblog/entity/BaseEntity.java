@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Author:zyk
+ * @author:zyk
  * @Description: baseEntity类
  * @Date:Create in 10:56 2017/11/22
  * @Modified By:

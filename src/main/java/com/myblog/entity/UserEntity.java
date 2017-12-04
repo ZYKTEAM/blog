@@ -4,7 +4,7 @@ package com.myblog.entity;
 import com.baomidou.mybatisplus.annotations.TableName;
 
 /**
- * @Author:zyk
+ * @author:zyk
  * @Description: 用户表
  * @Date:Create in 10:50 2017/11/22
  * @Modified By:

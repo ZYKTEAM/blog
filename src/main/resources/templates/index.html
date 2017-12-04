@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>主页</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/layui.css}" />
 </head>
 <body>
 <h1>配置成功,进入主页！！</h1>
@@ -11,6 +12,8 @@
     用户名：<div th:text="${user.username}"></div>
     密码：<div th:text="${user.password}"></div>
 </ul>
-12
+<script th:src="@{~/static/js/jquery-3.2.1.js}"></script>
+<script th:src="@{~/static/js/layui.all.js}"></script>
+
 </body>
 </html>

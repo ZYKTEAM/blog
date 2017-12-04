@@ -16,6 +16,9 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
+/**
+ * @author zyk
+ */
 @Configuration
 public class MybatisPlusConfig {
 

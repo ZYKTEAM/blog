@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 /**
- * @Author:zyk
+ * @author:zyk
  * @Description:用户
  * @Date:Create in 14:44 2017/11/29
  * @Modified By:
