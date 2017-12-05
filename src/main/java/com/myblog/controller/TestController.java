@@ -32,10 +32,11 @@ public class TestController {
      */
     @RequestMapping( value = "/index")
     public String index(Model model) {
-        List<UserEntity> userList = userService.queryList();
-        model.addAttribute("userList",userList);
+//        List<UserEntity> userList = userService.queryList();
+//        model.addAttribute("userList",userList);
         return "index/index";
     }
+
 
     /**
      * 分页 PAGE
