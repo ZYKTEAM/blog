@@ -14,12 +14,19 @@ import com.myblog.common.config.CommonPropertyConfiguration;
 @SpringBootApplication
 @EnableConfigurationProperties(CommonPropertyConfiguration.class)
 public class MyblogApplication extends SpringBootServletInitializer {
-
+	
+	/**
+	 * springboot 加载thymeleaf full-layout 布局
+	 */
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(MyblogApplication.class);
 	}
 	
+	/**
+	 * spring boot 启动
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(MyblogApplication.class, args);
 	}
