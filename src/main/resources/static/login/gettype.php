@@ -1,0 +1,1 @@
+geetest_1512453721954({"status": "success", "data": {"static_servers": ["static.geetest.com/", "dn-staticdown.qbox.me/"], "click": "/static/js/click.2.1.0.js", "fullpage": "/static/js/fullpage.8.2.1.js", "type": "fullpage", "aspect_radio": {"click": 128, "slide": 103}, "geetest": "/static/js/geetest.6.0.5.js", "slide": "/static/js/slide.7.0.7.js"}})
