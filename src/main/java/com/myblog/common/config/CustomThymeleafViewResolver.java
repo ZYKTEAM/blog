@@ -6,7 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.View;
 import org.thymeleaf.spring4.view.AbstractThymeleafView;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
-
+/**
+ * 封装full-layout 布局页面
+ * @author xiaojun
+ *
+ */
 public class CustomThymeleafViewResolver extends ThymeleafViewResolver {
 
 	@Autowired
