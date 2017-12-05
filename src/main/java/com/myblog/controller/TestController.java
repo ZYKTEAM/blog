@@ -34,7 +34,7 @@ public class TestController {
     public String index(Model model) {
         List<UserEntity> userList = userService.queryList();
         model.addAttribute("userList",userList);
-        return "index";
+        return "index/index";
     }
 
     /**
