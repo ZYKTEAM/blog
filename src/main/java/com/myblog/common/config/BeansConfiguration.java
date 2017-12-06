@@ -72,6 +72,7 @@ public class BeansConfiguration {
 		return resolver;
 	}
 	
+	@SuppressWarnings("deprecation")
 	private String appendCharset(MimeType type, String charset) {
 		if (type.getCharSet() != null) {
 			return type.toString();

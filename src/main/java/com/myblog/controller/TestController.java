@@ -1,18 +1,17 @@
 package com.myblog.controller;
 
 
-import com.baomidou.mybatisplus.mapper.Wrapper;
-import com.baomidou.mybatisplus.plugins.Page;
-import com.myblog.entity.UserEntity;
-import com.myblog.service.UserService;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Date;
-import java.util.List;
+import com.baomidou.mybatisplus.plugins.Page;
+import com.myblog.entity.UserEntity;
+import com.myblog.service.UserService;
 
 /**
  * @author:zyk
@@ -32,10 +31,11 @@ public class TestController {
      */
     @RequestMapping( value = "/index")
     public String index(Model model) {
-        List<UserEntity> userList = userService.queryList();
-        model.addAttribute("userList",userList);
+//        List<UserEntity> userList = userService.queryList();
+//        model.addAttribute("userList",userList);
         return "index/index";
     }
+
 
     /**
      * 分页 PAGE

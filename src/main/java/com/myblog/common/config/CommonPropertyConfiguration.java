@@ -4,12 +4,24 @@ import java.util.Map;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ * 	读取配置公共类
+ * @author xiaojun
+ *
+ */
 @ConfigurationProperties
 public class CommonPropertyConfiguration {
 	
+	
+	/*
+	 * fullLayout 布局
+	 */
 	private String layout;
 	private String fullLayout;
 	
+	/*
+	 * 封装thymeleaf
+	 */
 	private Map<String, String> templates;
 
 	public String getLayout() {
@@ -35,7 +47,5 @@ public class CommonPropertyConfiguration {
 	public void setTemplates(Map<String, String> templates) {
 		this.templates = templates;
 	}
-
-	 
 	
 }
