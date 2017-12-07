@@ -17,6 +17,7 @@ public class UserEntity extends BaseEntity {
     private String password;
     private Long deptid;
     private String deptname;
+    private String opendId;
 
     public String getUsername() {
         return username;

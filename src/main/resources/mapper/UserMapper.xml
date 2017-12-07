@@ -3,11 +3,15 @@
 <mapper namespace="com.myblog.mapper.UserMapper">
     <sql id="commonSql">
   id AS 'id',username AS 'username',password AS 'password',deptid AS 'deptid',deptname AS 'deptname',createid AS 'createid',createname AS 'createname',createtime AS 'createtime',
-  updateid AS 'updateid',updatename AS 'updatename',updatetime AS 'updatetime',flag AS 'flag'
+  updateid AS 'updateid',updatename AS 'updatename',updatetime AS 'updatetime',flag AS 'flag',opend_id As 'opendId'
     </sql>
 
     <select id="queryList" resultType="com.myblog.entity.UserEntity">
         SELECT  <include refid="commonSql"/> from db_user
+    </select>
+    
+    <select id="userLoginOpendId" resultType="com.myblog.entity.UserEntity">
+      SELECT  <include refid="commonSql"/> from db_user where opend_id = #{opendId}
     </select>
 
 </mapper>

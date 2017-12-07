@@ -29,7 +29,7 @@ public class TestController {
      * 访问主页
      * @return
      */
-    @RequestMapping( value = "/index")
+    @RequestMapping( value = "/index1")
     public String index(Model model) {
 //        List<UserEntity> userList = userService.queryList();
 //        model.addAttribute("userList",userList);

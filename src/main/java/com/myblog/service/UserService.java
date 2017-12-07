@@ -1,13 +1,14 @@
 package com.myblog.service;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.myblog.entity.UserEntity;
-import com.myblog.mapper.UserMapper;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.myblog.entity.UserEntity;
+import com.myblog.mapper.UserMapper;
 
 /**
  * Created by Administrator on 2017/11/30.
@@ -38,6 +39,11 @@ public class UserService extends ServiceImpl<UserMapper, UserEntity> {
     public List<UserEntity> queryList() {
         return userMapper.queryList();
     }
-
+    
+    @Cacheable(value = "user", key = "#root.targetClass+#username", unless = "#result eq null")
+    public UserEntity userLoginOpendId(String opendId) {
+    	UserEntity user = userMapper.userLoginOpendId(opendId);
+        return user;
+    }
 
 }
