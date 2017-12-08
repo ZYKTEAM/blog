@@ -132,11 +132,11 @@
         </dependency>
         <!-- qq -->
         <!-- mvn install:install-file -Dfile=d:/Sdk4J.jar -DgroupId=com.sdk4j -DartifactId=sdk4j -Dversion=1.0 -Dpackaging=jar -->
-        <dependency>
+       <!-- <dependency>
         	<groupId>com.sdk4j</groupId>
         	<artifactId>sdk4j</artifactId>
         	<version>1.0</version>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 
