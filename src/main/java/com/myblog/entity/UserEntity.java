@@ -2,6 +2,7 @@ package com.myblog.entity;
 
 
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.myblog.common.enums.LoginTypeEnum;
 
 /**
  * @author:zyk
@@ -9,15 +10,34 @@ import com.baomidou.mybatisplus.annotations.TableName;
  * @Date:Create in 10:50 2017/11/22
  * @Modified By:
  **/
-@TableName("db_user")
+@TableName("t_blog_user")
 public class UserEntity extends BaseEntity {
 
 
     private String username;
     private String password;
-    private Long deptid;
-    private String deptname;
-    private String opendId;
+    // 用户唯一身份识别 ID
+    private String openId;
+
+    /**
+     * 登录类型 {@link LoginTypeEnum}
+     */
+    private String loginType;
+
+    // 昵称
+    private String nickName;
+
+    // 头像
+    private String avatar;
+
+    // 性别
+    private String gender;
+
+    // 其他信息
+    private String meta;
+
+    // 用户信息 MD5 值，用于校验用户信息是否休息
+    private String md5;
 
     public String getUsername() {
         return username;
@@ -35,19 +55,59 @@ public class UserEntity extends BaseEntity {
         this.password = password;
     }
 
-    public Long getDeptid() {
-        return deptid;
+    public String getOpenId() {
+        return openId;
     }
 
-    public void setDeptid(Long deptid) {
-        this.deptid = deptid;
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 
-    public String getDeptname() {
-        return deptname;
+    public String getLoginType() {
+        return loginType;
     }
 
-    public void setDeptname(String deptname) {
-        this.deptname = deptname;
+    public void setLoginType(String loginType) {
+        this.loginType = loginType;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getMeta() {
+        return meta;
+    }
+
+    public void setMeta(String meta) {
+        this.meta = meta;
+    }
+
+    public String getMd5() {
+        return md5;
+    }
+
+    public void setMd5(String md5) {
+        this.md5 = md5;
     }
 }

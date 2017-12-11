@@ -2,15 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.myblog.mapper.UserMapper">
     <sql id="commonSql">
-  id AS 'id',username AS 'username',password AS 'password',deptid AS 'deptid',deptname AS 'deptname',createid AS 'createid',createname AS 'createname',createtime AS 'createtime',
-  updateid AS 'updateid',updatename AS 'updatename',updatetime AS 'updatetime',flag AS 'flag',opend_id As 'opendId'
+    `id` AS id,
+    `open_id` AS openId,
+    `gender` AS gender,
+    `username` AS username,
+    `email` AS email,
+    `password` AS password,
+    `create_time` AS createTime,
+    `avakname` AS avakname,
+    `cretar` AS cretar,
+    `birthday` AS birthday,
+    `meta` AS meta,
+    `md5` AS md5,
+    `login_type` AS loginType,
+    `introduce` AS introduce,
+    `addr` AS addr,
+    `qq` AS qq
     </sql>
 
     <select id="queryList" resultType="com.myblog.entity.UserEntity">
         SELECT  <include refid="commonSql"/> from db_user
     </select>
     
-    <select id="userLoginOpendId" resultType="com.myblog.entity.UserEntity">
+    <select id="selectByOpenId" resultType="com.myblog.entity.UserEntity">
       SELECT  <include refid="commonSql"/> from db_user where opend_id = #{opendId}
     </select>
 

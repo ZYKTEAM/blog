@@ -85,10 +85,9 @@ public class SignController {
 //    	}
     	//数据库查找openid 是否关联， 如果没有关联  跳转关联页面  如果有直接登录
     	String userOpenId = openidObj.getUserOpenID();
-    	UserEntity userOpen =userService.userLoginOpendId(userOpenId);
     	/*if(userOpen == null){//没有关联  进行关联(可以通过手机号绑定关联系统)
     		return "index/index2";
-    	}*/ 
+    	}*/
     	UserInfo qzoneUserInfo = new UserInfo(accessToken, userOpenId);
         UserInfoBean userInfoBean = qzoneUserInfo.getUserInfo();
         if (userInfoBean.getRet() == 0) {

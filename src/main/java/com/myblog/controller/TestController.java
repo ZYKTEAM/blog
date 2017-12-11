@@ -58,16 +58,4 @@ public class TestController {
         return userService.selectPage(new Page<UserEntity>(0, 12));
     }
 
-    /**
-     * 增删改查 CRUD
-     */
-    @GetMapping("/test2")
-    public UserEntity test2() {
-        UserEntity user = new UserEntity();
-        user.setDeptname("飒飒");
-        user.setUsername("dDSDS");
-        user.setCreatetime(new Date());
-        userService.insert(user);
-        return user;
-    }
 }

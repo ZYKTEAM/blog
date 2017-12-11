@@ -5,8 +5,6 @@ import com.myblog.entity.UserEntity;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
-
 /**
  * @author:zyk
  * @Description:用户
@@ -23,5 +21,6 @@ public interface UserMapper extends BaseMapper<UserEntity> {
      */
     List<UserEntity> queryList();
     
-    UserEntity userLoginOpendId(@Param("opendId")String opendId);
+
+    UserEntity selectByOpenId(String openId);
 }
