@@ -44,6 +44,17 @@
 }
 .madaiateClass{
     position: relative;
-    left: 30%;
+    left:30%;
+    float: left;
+    width: 30%;
     padding-top: 22px;
+}
+
+.regionStart{
+    float: right;
+    width: 29%;
+}
+.dataClas{
+    position: relative;
+    top:100px;
 }
