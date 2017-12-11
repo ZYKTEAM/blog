@@ -42,8 +42,12 @@ public class UserService extends ServiceImpl<UserMapper, UserEntity> {
     
     @Cacheable(value = "user", key = "#root.targetClass+#username", unless = "#result eq null")
     public UserEntity userLoginOpendId(String opendId) {
-    	UserEntity user = userMapper.userLoginOpendId(opendId);
-        return user;
+        return userMapper.userLoginOpendId(opendId);
+    }
+    
+    @Cacheable(value = "user", key = "#root.targetClass+#username", unless = "#result eq null")
+    public Integer loginUserName(String username,String password) {
+        return userMapper.loginUserName(username, password);
     }
 
 }
