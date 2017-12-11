@@ -27,18 +27,38 @@ import com.qq.connect.oauth.Oauth;
 @Controller
 public class SignController {
 	
-	 @Autowired
-	 private UserService userService;
+	@Autowired
+	private UserService userService;
 
-    
+    /**
+     *  登录页面
+     * @param model
+     * @return
+     */
     @RequestMapping( value = "/signIn")
     public String signIn(Model model) {
         return "content/sign_in";
     }
     
+    /**
+     *  注册页面页面
+     * @param model
+     * @return
+     */
     @RequestMapping( value = "/signUp")
     public String signUp(Model model) {
         return "content/sign_up";
+    }
+    
+    /**
+     *  登录页面
+     * @param model
+     * @return
+     */
+    
+    @RequestMapping( value = "/login")
+    public String login(Model model) {
+        return "index/index";
     }
     
     /**
@@ -69,7 +89,7 @@ public class SignController {
      * @return
      * @throws QQConnectException
      */
-    @RequestMapping( value = "/index")
+    @RequestMapping( value = "/qqLoginCallback")
     public String qqLoginCallback(HttpServletRequest request,Model model) throws QQConnectException{
     	//获取授权码
     	AccessToken accessTokenObj = new Oauth().getAccessTokenByRequest(request);

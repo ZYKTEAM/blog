@@ -30,7 +30,7 @@ public class TestController {
      * 访问主页
      * @return
      */
-    @RequestMapping( value = "/index1")
+    @RequestMapping( value = "/index")
     public String index(Model model) {
 //        List<UserEntity> userList = userService.queryList();
 //        model.addAttribute("userList",userList);

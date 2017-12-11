@@ -27,5 +27,9 @@
     <select id="selectByOpenId" resultType="com.myblog.entity.UserEntity">
       SELECT  <include refid="commonSql"/> from db_user where opend_id = #{opendId}
     </select>
+    
+    <select id="loginUserName" resultType="java.lang.Integer">
+     select count(1) from db_user where username = #{username} and password = #{password}
+    </select>
 
 </mapper>
