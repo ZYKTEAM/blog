@@ -2,6 +2,7 @@ package com.myblog.controller;
 
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +36,18 @@ public class TestController {
 //        model.addAttribute("userList",userList);
         return "index/index";
     }
+
+    /**
+     * 访问主页
+     * @return
+     */
+    @RequestMapping( value = "/other")
+    public String other(Model model) {
+        List<UserEntity> userList = userService.queryList();
+        model.addAttribute("userList",userList);
+        return "index/other";
+    }
+
 
 
     /**

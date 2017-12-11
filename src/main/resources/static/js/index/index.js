@@ -31,7 +31,7 @@ $(function() {
         carousel.render({
             elem: '#test10'
             , width: '600px'
-            , height: '350px'
+            , height: '250px'
             , interval: 5000
         });
 
