@@ -50,6 +50,11 @@ public class SignController {
         return "content/sign_up";
     }
     
+    @RequestMapping( value = "/signBack")
+    public String signBack(Model model) {
+        return "content/sign_back";
+    }
+    
     /**
      *  登录页面
      * @param model
