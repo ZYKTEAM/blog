@@ -39,4 +39,6 @@ public interface UserMapper extends BaseMapper<UserEntity> {
      * @return
      */
     Integer loginUserName(@Param("username")String username,@Param("password")String password);
+    
+    Integer saveUserMessage(UserEntity user);
 }

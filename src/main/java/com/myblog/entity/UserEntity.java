@@ -14,31 +14,44 @@ import com.myblog.common.enums.LoginTypeEnum;
 public class UserEntity extends BaseEntity {
 
 
-    private String username;
-    private String password;
-    // 用户唯一身份识别 ID
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3250621790917758743L;
+	
+	// 用户唯一身份识别 ID
     private String openId;
-
+    // 性别
+    private String gender;
+    //用户名
+    private String username;
+    //电话
+    private String phone;
+    //email
+    private String email;
+    //密码
+    private String password;
+    // 昵称
+    private String avakName;
+    // 头像
+    private String avatar;
+    //生日
+    private String birthday;
+    // 其他信息
+    private String meta;
+    // 用户信息 MD5 值，用于校验用户信息是否休息
+    private String md5;
     /**
      * 登录类型 {@link LoginTypeEnum}
      */
     private String loginType;
-
-    // 昵称
-    private String nickName;
-
-    // 头像
-    private String avatar;
-
-    // 性别
-    private String gender;
-
-    // 其他信息
-    private String meta;
-
-    // 用户信息 MD5 值，用于校验用户信息是否休息
-    private String md5;
-
+    //自我简介
+    private String introduce;
+    //地址
+    private String addr;
+    //QQ
+    private String qq;
+    
     public String getUsername() {
         return username;
     }
@@ -69,14 +82,6 @@ public class UserEntity extends BaseEntity {
 
     public void setLoginType(String loginType) {
         this.loginType = loginType;
-    }
-
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
     }
 
     public String getAvatar() {
@@ -110,4 +115,61 @@ public class UserEntity extends BaseEntity {
     public void setMd5(String md5) {
         this.md5 = md5;
     }
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAvakName() {
+		return avakName;
+	}
+
+	public void setAvakName(String avakName) {
+		this.avakName = avakName;
+	}
+
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getIntroduce() {
+		return introduce;
+	}
+
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
+	}
+
+	public String getAddr() {
+		return addr;
+	}
+
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+
+	public String getQq() {
+		return qq;
+	}
+
+	public void setQq(String qq) {
+		this.qq = qq;
+	}
+    
 }

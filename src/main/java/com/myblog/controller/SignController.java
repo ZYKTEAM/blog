@@ -7,8 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.druid.util.StringUtils;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.myblog.common.utils.EncryptedPassword;
+import com.myblog.common.utils.UUIDGenerator;
 import com.myblog.entity.UserEntity;
 import com.myblog.service.UserService;
 import com.qq.connect.QQConnectException;
@@ -17,7 +23,6 @@ import com.qq.connect.api.qzone.UserInfo;
 import com.qq.connect.javabeans.AccessToken;
 import com.qq.connect.javabeans.qzone.UserInfoBean;
 import com.qq.connect.oauth.Oauth;
-
 /**
  * @author:zyk
  * @Description:
@@ -29,6 +34,8 @@ public class SignController {
 	
 	@Autowired
 	private UserService userService;
+	
+	private Gson gson = new GsonBuilder().create();
 
     /**
      *  登录页面
@@ -41,7 +48,7 @@ public class SignController {
     }
     
     /**
-     *  注册页面页面
+     *  注册页面
      * @param model
      * @return
      */
@@ -50,20 +57,38 @@ public class SignController {
         return "content/sign_up";
     }
     
+    /**
+     *  找回密码页面
+     * @param model
+     * @return
+     */
     @RequestMapping( value = "/signBack")
     public String signBack(Model model) {
         return "content/sign_back";
     }
     
     /**
-     *  登录页面
+     *  注册
      * @param model
      * @return
      */
+    @RequestMapping(value="/signupusername", method=RequestMethod.GET)
+	public @ResponseBody Integer signupusername(String signInfo){
+		UserEntity user =gson.fromJson(signInfo, UserEntity.class);
+		user.setPassword(EncryptedPassword.generateEncryptedPassword(user.getPassword()));
+		user.setOpenId(UUIDGenerator.getUUID());
+		return userService.saveUserMessage(user);
+    }
     
-    @RequestMapping( value = "/login")
-    public String login(Model model) {
-        return "index/index";
+    /**
+     *  注册
+     * @param model
+     * @return
+     */
+    @RequestMapping(value="/signinusername", method=RequestMethod.GET)
+	public @ResponseBody Integer signinusername(String username,String password){
+//		return userService.loginUserMessage(username,EncryptedPassword.generateEncryptedPassword(password));
+    	return 0;
     }
     
     /**

@@ -31,5 +31,12 @@
     <select id="loginUserName" resultType="java.lang.Integer">
      select count(1) from db_user where username = #{username} and password = #{password}
     </select>
+    
+    <insert id="saveUserMessage" parameterType="com.myblog.entity.UserEntity">
+    	INSERT INTO t_blog_user 
+    		  (open_id, gender, username, phone, email, password, create_time, avakname, avatar, birthday, meta, md5, login_type, introduce, addr, qq)
+		VALUES 
+			  (#{openId}, #{gender},#{username},#{phone}, #{email}, #{password}, NOW(), #{avakName}, #{avatar}, #{birthday}, #{meta},#{md5}, #{loginType}, #{introduce}, #{addr}, #{qq})
+    </insert>
 
 </mapper>

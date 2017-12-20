@@ -4,8 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" th:href="@{/static/css/login/sign_up.css}" />
-	<script th:src="@{/static/js/jquery-3.2.1.js}"></script>
-	<script type="text/javascript" th:src="@{/static/login/sign_up.js}" ></script>
+	<link rel="stylesheet" th:href="@{/static/js/layer/css/layer.css}" />
 	<title>注册</title>
 	 
 </head>
@@ -20,12 +19,12 @@
 			<span class="title-content">注册</span>
 		</div>
 		<div class="middle-content">
-			<input type="text" placeholder="你的昵称" class="sigup_name"/>
-			<input type="text" placeholder="手机号" class="sigup_iphone"/>
-			<input type="text" placeholder="设置密码" class="sigup_password"/>
+			<input type="text" placeholder="你的用户名" class="sigup_name" id="username"/>
+			<input type="text" placeholder="手机号" class="sigup_iphone" id="phone"/>
+			<input type="text" placeholder="设置密码" class="sigup_password" id="password"/>
 		</div>
 		<div style="margin:1vh auto;width:80%;text-align:center;">
-			<button class="login_sign_up">注册</button>
+			<button class="login_sign_up sig_up_zc">注册</button>
 			<span style="font-size:0.6em;display:inline-block;width:80%;">点击"注册"即表示您统一并愿意遵守简书
 				<b style="color:#51acd6;">用户协议</b>和
 				<b style="color:#51acd6;">隐私政策</b>
@@ -43,10 +42,8 @@
 	</div>
 </body>
 
-<script language="javascript">
-
-
-
-</script>
+<script th:src="@{/static/js/jquery-3.2.1.js}"></script>
+<script type="text/javascript" th:src="@{/static/login/sign_up.js}" ></script>
+<script th:src="@{/static/js/layer/js/layer.js}"></script>
 
 </html>

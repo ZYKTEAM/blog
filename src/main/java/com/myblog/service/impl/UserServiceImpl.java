@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.myblog.entity.UserEntity;
 import com.myblog.mapper.UserMapper;
 import com.myblog.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -68,5 +69,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         }
         return user;
     }
+
+	@Override
+	public Integer saveUserMessage(UserEntity user) {
+		return userMapper.saveUserMessage(user);
+	}
 
 }
