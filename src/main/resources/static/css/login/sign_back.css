@@ -67,6 +67,7 @@
 	border:0;
 	outline:0;
 	color:#fff;
+	cursor:pointer;
 }
 .sigup_password1{
 	border:1px solid #ccc;
@@ -93,4 +94,11 @@
 	height:4vh;
 	border-radius:15px;
 	margin:2vh 0;
+	cursor:pointer;
+}
+.return_login{
+	font-size:0.6em;
+	display:inline-block;
+	width:80%;
+	cursor:pointer;
 }

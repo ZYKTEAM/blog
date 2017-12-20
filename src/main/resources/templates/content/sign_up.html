@@ -4,16 +4,18 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" th:href="@{/static/css/login/sign_up.css}" />
+	<script th:src="@{/static/js/jquery-3.2.1.js}"></script>
+	<script type="text/javascript" th:src="@{/static/login/sign_up.js}" ></script>
 	<title>注册</title>
 	 
 </head>
 
 
 <body class="body-content">
-	<header class="body-header">简书</header>
+	<header class="body-header">你微笑时好美</header>
 	<div class="content">
 		<div class="top-content">
-			<span>登录</span>
+			<span style="cursor:pointer;" id="title-login">登录</span>
 			<i>.</i>
 			<span class="title-content">注册</span>
 		</div>
@@ -23,7 +25,7 @@
 			<input type="text" placeholder="设置密码" class="sigup_password"/>
 		</div>
 		<div style="margin:1vh auto;width:80%;text-align:center;">
-			<button style="border:none;outline:0;background:#48bf3a;width:100%;height:4vh;border-radius:15px;margin:2vh 0;">注册</button>
+			<button class="login_sign_up">注册</button>
 			<span style="font-size:0.6em;display:inline-block;width:80%;">点击"注册"即表示您统一并愿意遵守简书
 				<b style="color:#51acd6;">用户协议</b>和
 				<b style="color:#51acd6;">隐私政策</b>
@@ -33,9 +35,9 @@
 		<div style="margin:2vh auto;width:70%;">
 			<span>----社交帐号直接注册----</span>
 			<div style="margin:3vh auto;width:100%;">
-				<img th:src="@{/static/img/weibo.png}" alt="" style="width:30%;"/>
-				<img th:src="@{/static/img/wechat.png}" alt="" style="width:30%;"/>
-				<img th:src="@{/static/img/QQ.png}" alt="" style="width:30%;"/>
+				<img th:src="@{/static/img/weibo.png}" alt="" style="width:30%;cursor:pointer;"/>
+				<img th:src="@{/static/img/wechat.png}" alt="" style="width:30%;cursor:pointer;"/>
+				<img th:src="@{/static/img/QQ.png}" alt="" style="width:30%;cursor:pointer;"/>
 			</div>
 		</div>
 	</div>

@@ -4,18 +4,20 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" th:href="@{/static/css/login/sign_in.css}" />
+	<script th:src="@{/static/js/jquery-3.2.1.js}"></script>
+	<script type="text/javascript" th:src="@{/static/login/sign_in.js}" ></script>
 	<title>登录</title>
 	 
 </head>
 
 
 <body class="body-content">
-	<header class="body-header">简书</header>
+	<header class="body-header">你微笑时好美</header>
 	<div class="content">
 		<div class="top-content">
 			<span class="title-content">登录</span>
 			<i>.</i>
-			<span>注册</span>
+			<span style="cursor:pointer;" id="sign-up">注册</span>
 		</div>
 		<div class="middle-content">
 			<input type="text" placeholder="手机号或邮箱" class="sigin_iphone"/>
@@ -23,15 +25,15 @@
 		</div>
 		<div style="margin:2vh auto;width:80%;">
 			<input type="checkbox"/>记住我
-			<span style="float:right;">登录遇到问题？</span>
-			<button class="singin_login">登录</button>
+			<span class="login_wenti login-back">登录遇到问题？</span>
+			<button class="singin_login my_login">登录</button>
 		</div>
 		<div style="margin:2vh auto;width:50%;">
 			<span>----社交帐号登录----</span>
 			<div style="margin:3vh auto;width:100%;">
-				<img th:src="@{/static/img/weibo.png}" alt="" style="width:30%;"/>
-				<img th:src="@{/static/img/wechat.png}" alt="" style="width:30%;"/>
-				<img th:src="@{/static/img/QQ.png}" alt="" style="width:30%;"/>
+				<img th:src="@{/static/img/weibo.png}" alt="" style="width:30%;cursor:pointer;"/>
+				<img th:src="@{/static/img/wechat.png}" alt="" style="width:30%;cursor:pointer;"/>
+				<img th:src="@{/static/img/QQ.png}" alt="" style="width:30%;cursor:pointer;"/>
 			</div>
 		</div>
 	</div>

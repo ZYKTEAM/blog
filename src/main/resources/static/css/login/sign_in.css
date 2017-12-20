@@ -33,6 +33,7 @@
 .title-content{
 	color:#e9705f;
 	border-bottom:2px solid #e9705f;
+	cursor:pointer;
 }
 .sigin_iphone{
 	outline:0;
@@ -61,4 +62,9 @@
 	height:4vh;
 	border-radius:15px;
 	margin-top:2vh;
+	cursor:pointer;
+}
+.login_wenti{
+	float:right;
+	cursor:pointer;
 }
