@@ -1,303 +1,211 @@
-<!-- <div class="layui-carousel" id="test10" style="margin-top: 5px;position: relative;left: 30%">
-    <div carousel-item="">
-        <div><img src="/blog/static/img/2.jpg"/></div>
-        <div><img src="/blog/static/img/3.jpg"/></div>
-        <div><img src="/blog/static/img/4.jpg"/></div>
-    </div>
+ <link rel="stylesheet" type="text/css" th:href="@{/static/css/index-info.css}"/>
+  <link rel="stylesheet" type="text/css" th:href="@{/static/css/index-info1.css}"/>
+   <link rel="stylesheet" type="text/css" th:href="@{/static/css/index-info2.css}"/>
 
-</div>
-<div>
-    <div  class="madaiateClass">
-        这里是板块：
-        <button class="layui-btn">读书</button>
-        <button class="layui-btn layui-btn-normal">历史</button>
-        <button class="layui-btn layui-btn-warm">青年文摘</button>
-        <button class="layui-btn layui-btn-danger">玄幻修仙</button>
-    </div>
-    <div class="dataClas">
-        滚动列表！
-    </div>
-</div>
-
-<br/>
-
-
-<div class="regionStart">
-    左侧栏111111111！
-</div> -->
-
-
-<div class="container index">
-  <div class="row">
-    <div class="col-xs-16 main">
-      <!-- Banner -->
-        <div id="indexCarousel" class="carousel slide">
-          <div class="carousel-inner">
-              <div class="item active left">
-                <div class="banner" data-banner-name="简书×火影忍者手游征文">
-                  <a target="_blank" href="xiaojun/p/e248f125b8d1?utm_medium=index-banner&amp;utm_source=desktop">
-                 	 <img th:src="@{/static/img/c3719b99916306d2bf370e464410b10341d08dac.jpg}" alt="540"/>
-                  </a>
-                </div>
-              </div>
-              <div class="item next left">
-                <div class="banner" data-banner-name="4韩大爷的读写训练营">
-                  <a target="_blank" href="xiaojun/p/2f8376ba2664?utm_medium=index-banner&amp;utm_source=desktop">
-                  	<img th:src="@{/static/img/d5e42ca61fd54e5f3166b2f13659932381ec3183.jpg}" alt="540"/>
-                  </a>
-                </div>
-              </div>
-              <div class="item">
-                <div class="banner" data-banner-name="他乡无所有，聊赠一枝春丨简书交友新年礼物交换会">
-                   <a target="_blank" href="http://www.jianshu.com/p/365daa384295?utm_medium=index-banner&amp;utm_source=desktop">
-                  	 <img th:src="@{/static/img/4a0679fb9dde465cd13797299699be750382b04c.jpg}" alt="540"/>
-                  	</a>
-                </div>
-              </div>
-              <div class="item">
-                <div class="banner" data-banner-name="limoshikongdebuju">
-                   <a target="_blank" href="xiaojun/p/a40998de1feb?utm_medium=index-banner&amp;utm_source=desktop">
-                  		<img th:src="@{/static/img/97984254f407672e5ca56e4aa66ad9e4330e3e0b.jpg}" alt="540"/>
-                  	</a>
-                </div>
-              </div>
+<div class="note">
+  <a target="_blank" href="https://www.jianshu.com/apps/download?utm_source=sbc" id="web-note-ad-fixed"><span class="close">×</span></a>
+  <div class="post">
+    <div class="article">
+        <h1 class="title">玉魂</h1>
+        <!-- 作者区域 -->
+        <div class="author">
+          	<a class="avatar" href="https://www.jianshu.com/u/53ca58d77138">
+           		 <img src="./玉魂 - 简书_files/e2e0c653-63b5-4932-9941-ab81324a5d8b.jpg/" alt="96"/>
+			</a>          
+			<div class="info">
+            <span class="name"><a href="https://www.jianshu.com/u/53ca58d77138">红颜君</a></span>
+            <!-- 关注用户按钮 -->
+            <a class="btn btn-success follow"><i class="iconfont ic-follow"></i><span>关注</span></a>
+            <!-- 文章数据信息 -->
+            <div class="meta">
+              <!-- 如果文章更新时间大于发布时间，那么使用 tooltip 显示更新时间 -->
+                <span class="publish-time">2017.12.22 11:01</span>
+              <span class="wordage">字数 9721</span>
+            <span class="views-count">阅读 295</span><span class="comments-count">评论 4</span><span class="likes-count">喜欢 10</span></div>
           </div>
-            <ol class="carousel-indicators">
-                <li data-target="#indexCarousel" data-slide-to="0" class=""></li>
-                <li data-target="#indexCarousel" data-slide-to="1" class="active"></li>
-                <li data-target="#indexCarousel" data-slide-to="2" class=""></li>
-                <li data-target="#indexCarousel" data-slide-to="3" class=""></li>
-            </ol>
-            <a class="left carousel-control" href="xiaojun/#indexCarousel" role="button" data-slide="prev"><i class="iconfont ic-previous-s"></i></a>
-            <a class="right carousel-control" href="xiaojun/#indexCarousel" role="button" data-slide="next"><i class="iconfont ic-next-s"></i></a>
+          <!-- 如果是当前作者，加入编辑按钮 -->
         </div>
-    
-         <div class="recommend-collection">
-	            <a class="collection" target="_blank" href="xiaojun/c/1hjajt?utm_medium=index-collections&amp;utm_source=desktop">
-	              	<img th:src="@{/static/img/avatar.jpg}" alt="64"/>
-	             	 <div class="name">简书电影</div>
-				</a>            
-				<a class="collection" target="_blank" href="xiaojun/c/b676c24f7d60?utm_medium=index-collections&amp;utm_source=desktop">
-	              	<img th:src="@{/static/img/avatar.jpg}" alt="64"/>
-	             	 <div class="name">人文社科</div>
-				</a>            
-				<a class="collection" target="_blank" href="xiaojun/c/20f7f4031550?utm_medium=index-collections&amp;utm_source=desktop">
-	             	 <img th:src="@{/static/img/avatar.jpg}" alt="64"/>
-	            	  <div class="name">社会热点</div>
-				</a>            
-				<a class="collection" target="_blank" href="xiaojun/c/5AUzod?utm_medium=index-collections&amp;utm_source=desktop">
-	             	 <img th:src="@{/static/img/avatar.jpg}" alt="64"/>
-	             	 <div class="name">旅行·在路上</div>
-				</a>            
-				<a class="collection" target="_blank" href="xiaojun/c/yD9GAd?utm_medium=index-collections&amp;utm_source=desktop">
-              	  	<img th:src="@{/static/img/avatar.jpg}" alt="64"/>
-	              	<div class="name">读书</div>
-				</a>            
-				<a class="collection" target="_blank" href="xiaojun/c/e7d2d4045b36?utm_medium=index-collections&amp;utm_source=desktop">
-             		 <img th:src="@{/static/img/avatar.jpg}" alt="64"/>
-              		<div class="name">历史</div>
-				</a>            
-				<a class="collection" target="_blank" href="xiaojun/c/7b2be866f564?utm_medium=index-collections&amp;utm_source=desktop">
-             		 <img th:src="@{/static/img/avatar.jpg}" alt="64"/>
-              		  <div class="name">摄影</div>
-				</a>
-           		<a class="more-hot-collection" target="_blank" href="xiaojun/recommendations/collections?utm_medium=index-collections&amp;utm_source=desktop">
-              		更多热门专题 <i class="iconfont ic-link"></i>
-				</a>        
-		   </div>
-      <div class="split-line"></div>
-      <div id="list-container">
-        <!-- 文章列表模块 -->
-          <ul class="note-list" infinite-scroll-url="/">
+        <!-- -->
 
-			<li id="note-21758606" data-note-id="21758606" class="have-img">
-			    <a class="wrap-img" href="xiaojun/p/3e7c5b9dac30" target="_blank">
-			      <img class="  img-blur-done" th:src="@{/static/img/4946217-6e9b33852ebda54f.jpg}" alt="120"/>
-			    </a>
-			  <div class="content">
-			    <div class="author">
-				     <a class="avatar" target="_blank" href="xiaojun/u/99425acfd638">
-				        <img th:src="@{/static/img/911a0611-8b2b-4ab1-8321-61ae9b65d1d8.jpg}" alt="64"/>
-					</a>      
-				 <div class="info">
-			        <a class="nickname" target="_blank" href="xiaojun/u/99425acfd638">盛慧</a>
-			        <span class="time" data-shared-at="2017-12-28T00:09:44+08:00">15小时前</span>
-			      </div>
-			    </div>
-			    <a class="title" target="_blank" href="xiaojun/p/3e7c5b9dac30">读书与不读书，差别到底在哪里？</a>
-			    <p class="abstract">
-			      老同学聚会，聊起在学校时的一些趣事，酒过三巡后，一个曾经的差生拍着班长的肩膀说： 你说读书有什么用，我高中都没读毕业现在照样开跑车，我厂子里现在三百多号人，随便一个人的工资都...
-			    </p>
-			    <div class="meta">
-			        <a class="collection-tag" target="_blank" href="xiaojun/c/yD9GAd">读书</a>
-			        <a target="_blank" href="xiaojun/p/3e7c5b9dac30">
-			        	<i class="iconfont ic-list-read"></i> 10656
-					</a>        
-					<a target="_blank" href="xiaojun/p/3e7c5b9dac30#comments">
-			           <i class="iconfont ic-list-comments"></i> 228
-					</a>       
-					<span><i class="iconfont ic-list-like"></i> 602</span>
-			        <span><i class="iconfont ic-list-money"></i> 2</span>
-			    </div>
-			  </div>
-			</li>
-
-
-			<li id="note-21758606" data-note-id="21758606" class="have-img">
-			    <a class="wrap-img" href="xiaojun/p/3e7c5b9dac30" target="_blank">
-			      <img class="  img-blur-done" th:src="@{/static/img/4946217-6e9b33852ebda54f.jpg}" alt="120"/>
-			    </a>
-			  <div class="content">
-			    <div class="author">
-				     <a class="avatar" target="_blank" href="xiaojun/u/99425acfd638">
-				        <img th:src="@{/static/img/911a0611-8b2b-4ab1-8321-61ae9b65d1d8.jpg}" alt="64"/>
-					</a>      
-				 <div class="info">
-			        <a class="nickname" target="_blank" href="xiaojun/u/99425acfd638">盛慧</a>
-			        <span class="time" data-shared-at="2017-12-28T00:09:44+08:00">15小时前</span>
-			      </div>
-			    </div>
-			    <a class="title" target="_blank" href="xiaojun/p/3e7c5b9dac30">读书与不读书，差别到底在哪里？</a>
-			    <p class="abstract">
-			      老同学聚会，聊起在学校时的一些趣事，酒过三巡后，一个曾经的差生拍着班长的肩膀说： 你说读书有什么用，我高中都没读毕业现在照样开跑车，我厂子里现在三百多号人，随便一个人的工资都...
-			    </p>
-			    <div class="meta">
-			        <a class="collection-tag" target="_blank" href="xiaojun/c/yD9GAd">读书</a>
-			        <a target="_blank" href="xiaojun/p/3e7c5b9dac30">
-			        	<i class="iconfont ic-list-read"></i> 10656
-					</a>        
-					<a target="_blank" href="xiaojun/p/3e7c5b9dac30#comments">
-			           <i class="iconfont ic-list-comments"></i> 228
-					</a>       
-					<span><i class="iconfont ic-list-like"></i> 602</span>
-			        <span><i class="iconfont ic-list-money"></i> 2</span>
-			    </div>
-			  </div>
-			</li>
-
-
-			<li id="note-21758606" data-note-id="21758606" class="have-img">
-			    <a class="wrap-img" href="xiaojun/p/3e7c5b9dac30" target="_blank">
-			      <img class="  img-blur-done" th:src="@{/static/img/4946217-6e9b33852ebda54f.jpg}" alt="120"/>
-			    </a>
-			  <div class="content">
-			    <div class="author">
-				     <a class="avatar" target="_blank" href="xiaojun/u/99425acfd638">
-				        <img th:src="@{/static/img/911a0611-8b2b-4ab1-8321-61ae9b65d1d8.jpg}" alt="64"/>
-					</a>      
-				 <div class="info">
-			        <a class="nickname" target="_blank" href="xiaojun/u/99425acfd638">盛慧</a>
-			        <span class="time" data-shared-at="2017-12-28T00:09:44+08:00">15小时前</span>
-			      </div>
-			    </div>
-			    <a class="title" target="_blank" href="xiaojun/p/3e7c5b9dac30">读书与不读书，差别到底在哪里？</a>
-			    <p class="abstract">
-			     	 老同学聚会，聊起在学校时的一些趣事，酒过三巡后，一个曾经的差生拍着班长的肩膀说： 你说读书有什么用，我高中都没读毕业现在照样开跑车，我厂子里现在三百多号人，随便一个人的工资都...
-			    </p>
-			    <div class="meta">
-			        <a class="collection-tag" target="_blank" href="xiaojun/c/yD9GAd">读书</a>
-			        <a target="_blank" href="xiaojun/p/3e7c5b9dac30">
-			        	<i class="iconfont ic-list-read"></i> 10656
-					</a>        
-					<a target="_blank" href="xiaojun/p/3e7c5b9dac30#comments">
-			           <i class="iconfont ic-list-comments"></i> 228
-					</a>       
-					<span><i class="iconfont ic-list-like"></i> 602</span>
-			        <span><i class="iconfont ic-list-money"></i> 2</span>
-			    </div>
-			  </div>
-			</li>
-		</ul>
-  	 </div>
-  
-  
-  
-    <a data-page="3" href="xiaojun/" class="load-more">阅读更多</a></div>
-      <div class="col-xs-7 col-xs-offset-1 aside">
-        <div class="board">
-            <a target="_blank" href="xiaojun/recommendations/notes?category_id=56&amp;utm_medium=index-banner-s&amp;utm_source=desktop">
-           		<img th:src="@{/static/img/banner-s-1-b8ff9ec59f72ea88ecc8c42956f41f78.png}" alt="Banner s 1"/>
-			</a>       
-			<a target="_blank" href="xiaojun/trending/weekly?utm_medium=index-banner-s&amp;utm_source=desktop">
-				<img th:src="@{/static/img/banner-s-3-7123fd94750759acf7eca05b871e9d17.png}" alt="Banner s 3"/>
-			</a>
-	        <a target="_blank" href="xiaojun/trending/monthly?utm_medium=index-banner-s&amp;utm_source=desktop">
-	        	<img th:src="@{/static/img/banner-s-4-b70da70d679593510ac93a172dfbaeaa.png}" alt="Banner s 4"/>
-	        </a>
-	        <a utm_medium="index-banner-s" target="_blank" href="xiaojun/publications">
-	        	<img th:src="@{/static/img/banner-s-5-291e00e9156f30791fe24e3de9c39171.png}" alt="Banner s 5"/>
-	        </a>
-	        <a target="_blank" href="xiaojun/c/e048f1a72e3d?utm_medium=index-banner-s&amp;utm_source=desktop">
-	       		 <img th:src="@{/static/img/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png}" alt="Banner s 6"/>
-	        </a>
-      </div>
- 
-      <!-- 推荐作者 -->
-      <div class="recommended-authors">
-      	<div class="title">
-      		<span>推荐作者</span> 
-      		<a class="page-change">
-      		<i class="iconfont ic-search-change" style="transform: rotate(0deg);"></i>
-				换一批
-    		</a>
-    	</div> 
-    	<ul class="list">
-    		<li>
-    			<a href="xiaojun/u/b52ff888fd17?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="avatar">
-    				<img th:src="@{/static/img/b8a58e70-1126-48c9-97e2-8f21a31dfa94.png}"/>
-    			</a> 
-    			<a class="follow" state="0"><i class="iconfont ic-follow"></i>关注 </a> 
-				<a href="xiaojun/u/b52ff888fd17?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="name">简宝玉</a>
-				<p> 写了66.8k字 · 10.1k喜欢</p>
-			</li>
-			<li>
-				<a href="xiaojun/u/5SqsuF?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="avatar">
-					<img th:src="@{/static/img/b8a58e70-1126-48c9-97e2-8f21a31dfa94.png}"/>
-				</a> 
-				<a class="follow" state="0"><i class="iconfont ic-follow"></i>关注</a> 
-				<a href="xiaojun/u/5SqsuF?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="name">刘淼 </a> 
-				<p>写了418.6k字 · 22.6k喜欢</p>
-			</li>
-			<li>
-				<a href="xiaojun/u/5SqsuF?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="avatar">
-					<img th:src="@{/static/img/b8a58e70-1126-48c9-97e2-8f21a31dfa94.png}"/>
-				</a> 
-				<a class="follow" state="0"><i class="iconfont ic-follow"></i>关注</a> 
-				<a href="xiaojun/u/5SqsuF?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="name">刘淼 </a> 
-				<p>写了418.6k字 · 22.6k喜欢</p>
-			</li>
-			<li>
-				<a href="xiaojun/u/5SqsuF?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="avatar">
-					<img th:src="@{/static/img/b8a58e70-1126-48c9-97e2-8f21a31dfa94.png}"/>
-				</a> 
-				<a class="follow" state="0"><i class="iconfont ic-follow"></i>关注</a> 
-				<a href="xiaojun/u/5SqsuF?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="name">刘淼 </a> 
-				<p>写了418.6k字 · 22.6k喜欢</p>
-			</li>
-			<li>
-				<a href="xiaojun/u/5SqsuF?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="avatar">
-					<img th:src="@{/static/img/b8a58e70-1126-48c9-97e2-8f21a31dfa94.png}"/>
-				</a> 
-				<a class="follow" state="0"><i class="iconfont ic-follow"></i>关注</a> 
-				<a href="xiaojun/u/5SqsuF?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="name">刘淼 </a> 
-				<p>写了418.6k字 · 22.6k喜欢</p>
-			</li>
-		</ul> 
-			<a href="xiaojun/recommendations/users?utm_source=desktop&amp;utm_medium=index-users" target="_blank" class="find-more"> 查看全部
-				<i class="iconfont ic-link"></i>
-			</a>
-		</div>
+        <!-- 文章内容 -->
+        <div data-note-content="" class="show-content">
+	          <p>昏暗的灯光，绿色的翡翠，红色的玛瑙，各色的碧玺，各种玉石发出幽冷的光。而我就静静地躺在这众多的玉石之中，躺了不知有多久。窗户外面，车水马龙，天没有记忆中的那么蓝，
+	          	树也没有记忆中那样翠绿挺拔，来来往往的都是行色匆匆的路人，不知道要去往哪里，也许连他们也不知道自己的目的地。时间一天一天过去，我身边的玉石换了一批又一批，我甚至能清晰地感受到他
+	          	们之中深藏的灵魂和每个灵魂后面的故事，然后又看着他们忘记前生的记忆，迎接新的主人和生活。而我，因无法放弃前世执念，而被人们认为是无法护主的凶石，一直无法出售。</p>
+	          	<p>我已经不记得是什么时候，我赖以生存的河流早已干涸，我被人们反复转手出售，换了很多个地方，见到不同的人，听到不同的声音。却再也没有听到过像白瓷那般干净温和的声音。就这样结束了吗？我在心底问自己。
+	          	不，我拥有人人羡慕的永恒，玉体永恒，灵魂便不灭，而我却丢失了永恒的理由。从此，我拒绝人类任何强行的抹杀记忆的行为，他们称之为“消磁”，无论是消磁的碎石，还是强大的月光，都无法抹去我的记忆。我至今都
+	          	还清楚的记得，当人们看到我把消磁的晶石震的粉碎时候的表情。从此之后，我便被丢弃在角落之中，无人问津。
+	          	</p> 
+          </div>
+        <!--  -->
+        
+        <div class="show-foot">
+          	<a class="notebook" href="https://www.jianshu.com/nb/20237924">
+	            <i class="iconfont ic-search-notebook"></i>
+	            <span>小说</span>
+			</a>          
+			<div class="copyright" data-toggle="tooltip" data-html="true" data-original-title="转载请联系作者获得授权，并标注“简书作者”。">
+            © 著作权归作者所有
+          </div>
+          <div class="modal-wrap" data-report-note="">
+            <a id="report-modal">举报文章</a>
+          </div>
+        </div>
     </div>
+
+    <!-- 文章底部作者信息 -->
+      <div class="follow-detail">
+        <div class="info">
+          	<a class="avatar" href="https://www.jianshu.com/u/53ca58d77138">
+           		 <img src="./玉魂 - 简书_files/e2e0c653-63b5-4932-9941-ab81324a5d8b.jpg" alt="96"/>
+			</a>          
+			<a class="btn btn-success follow"><i class="iconfont ic-follow"></i><span>关注</span></a>
+            <a class="title" href="https://www.jianshu.com/u/53ca58d77138">红颜君</a>
+          
+        	<p>写了 35970 字，被 12 人关注，获得了 37 个喜欢</p></div>
+          <div class="signature">公众号：历史红颜说剖析历史女性80后专业写作</div>
+      </div>
+
+      <div class="support-author"><p>小礼物走一走，来简书关注我</p> <div class="btn btn-pay">赞赏支持</div> <!----> <!----> <!----></div>
+
+    <div class="meta-bottom">
+      <div class="like">
+      	<div class="btn like-group">
+      		<div class="btn-like">
+      			<a> <i class="iconfont ic-like"></i>喜欢 </a>
+      		</div> 
+      		<div class="modal-wrap">
+      			<a>10</a>
+      		</div>
+      	</div> <!---->
+      </div>
+      <div class="share-group">
+        <a class="share-circle" data-action="weixin-share" data-toggle="tooltip" data-original-title="分享到微信">
+          <i class="iconfont ic-wechat"></i>
+        </a>
+        <a class="share-circle" data-action="weibo-share" data-toggle="tooltip" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;http://cwb.assets.jianshu.io/notes/images/21486248/weibo/image_c313db2501d8.jpg&#39;, &#39;推荐 红颜君 的文章《玉魂》（ 分享自 @简书 ）&#39;,&#39;https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weibo&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));" data-original-title="分享到微博">
+          <i class="iconfont ic-weibo"></i>
+        </a>
+          <a class="share-circle" data-toggle="tooltip" href="http://cwb.assets.jianshu.io/notes/images/21486248/weibo/image_c313db2501d8.jpg" target="_blank" data-original-title="下载长微博图片">
+            <i class="iconfont ic-picture"></i>
+          </a>
+        <a class="share-circle more-share" tabindex="0" data-toggle="popover" data-placement="top" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content="
+          &lt;ul class=&quot;share-list&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qzone&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 红颜君 的文章《玉魂》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-zone&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到QQ空间&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=twitter&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 红颜君 的文章《玉魂》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-twitter&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=facebook&#39;,x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-facebook&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=google_plus&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-google&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Google+&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=douban&#39;)+&#39;&amp;title=&#39;+e(&#39;玉魂&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-douban&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到豆瓣&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        " data-original-title="" title="">更多分享</a>
+      </div>
+    </div>
+    <div>
+    
+    <div id="comment-list" class="comment-list">
+	    <div>
+		    <form class="new-comment">
+		    	<a class="avatar"><img src="./玉魂 - 简书_files/522b36c2-5d9b-4ba7-ad4e-2aeda34f1559(1)"/></a> 
+		    	<textarea placeholder="写下你的评论..."></textarea> <!---->
+		    </form> <!---->
+	    </div> 
+	    <div id="normal-comment-list" class="normal-comment-list">
+	    	<div>
+	    		<div>
+	    			<div class="top-title">
+	    				<span>4条评论</span> 
+	    				<a class="author-only">只看作者</a> 
+	    				<a class="close-btn" style="display: none;">关闭评论</a> 
+	    				 <div class="pull-right">
+	    					<a class="active">按喜欢排序</a>
+	    					<a class="">按时间正序</a>
+	    					<a class="">按时间倒序</a>
+	    				</div>
+	    			</div>
+	    		</div> <!----> <!----> 
+	    		<div class="comments-placeholder" style="display: none;">
+	    			<div class="author">
+	    				<div class="avatar"></div> 
+	    					<div class="info">
+	    						<div class="name"></div> 
+	    						<div class="meta"></div>
+	    					</div>
+	    				</div> 
+	    				<div class="text"></div> 
+	    				<div class="text animation-delay"></div> 
+	    				<div class="tool-group">
+	    					<i class="iconfont ic-zan-active"></i>
+	    					<div class="zan"></div> 
+	    					<i class="iconfont ic-list-comments"></i>
+	    					<div class="zan"></div>
+	    				</div>
+	    			</div> 
+	    			<div id="comment-18785850" class="comment">
+	    			<div>
+	    				<div class="author">
+	    					<div data-v-f3bf5228="" class="v-tooltip-container" style="z-index: 0;">
+	    						<div class="v-tooltip-content"><a href="https://www.jianshu.com/u/93b1c3a6bc6b" target="_blank" class="avatar">
+	    						<img src="./玉魂 - 简书_files/5ab87b64-948f-432a-83c8-052d72045229.jpg"/></a>  
+	    					</div> <!---->
+	    				</div> 
+	    				<div class="info">
+	    					<a href="https://www.jianshu.com/u/93b1c3a6bc6b" target="_blank" class="name">依泉</a> <!----> <!----> 
+	    					<div class="meta"><span>2楼 · 2017.12.22 16:48</span></div>
+	    				</div>
+	    			</div> 
+	    			<div class="comment-wrap">
+	    			<p>写得好<img src="./玉魂 - 简书_files/smile.png" alt=":smile:" title=":smile:" class="emoji" width="20" height="20"/>，我在写连载小说，请多指点！</p> 
+	    			<div class="tool-group"><a class="">
+	    			<i class="iconfont ic-zan"></i> <span>1人赞</span></a> 
+	    			<a class="">
+	    			<i class="iconfont ic-comment"></i> <span>回复</span></a> 
+	    			<a class="report"><span>举报</span></a> <!---->
+	    			</div>
+	    			</div>
+	    			</div>
+	    			<div class="sub-comment-list">
+	    			<!-- <div id="comment-18869467" class="sub-comment">
+	    			<p><div data-v-f3bf5228="" class="v-tooltip-container" style="z-index: 0;">
+	    			<div class="v-tooltip-content">
+	    			<a href="https://www.jianshu.com/u/53ca58d77138" target="_blank">红颜君</a>：
+            </div>
+            </div> <span>
+            <a href="https://www.jianshu.com/users/93b1c3a6bc6b" class="maleskine-author" target="_blank" data-user-slug="93b1c3a6bc6b">@依泉</a> 谢谢，互相学习，加油</span>
+            </p> 
+            <div class="sub-tool-group"><span>2017.12.25 08:48</span> <a class=""><i class="iconfont ic-comment"></i> <span>回复</span></a> 
+            <a class="report"><span>举报</span></a></div></div>  -->
+            <div class="sub-comment more-comment"><a class="add-comment-btn">
+            <i class="iconfont ic-subcomment"></i> <span>添加新评论</span></a> <!----> <!----> <!----></div> <!---->
+            </div></div>
+            <div id="comment-18971618" class="comment">
+            <div><div class="author"><div data-v-f3bf5228="" class="v-tooltip-container" style="z-index: 0;">
+            <div class="v-tooltip-content"><a href="https://www.jianshu.com/u/d97fb1f4ca29" target="_blank" class="avatar">
+            <img src="./玉魂 - 简书_files/8588c880-e897-4da3-9d95-2b1d177cc6af.jpg"/></a>  </div> <!----></div> <div class="info">
+            <a href="https://www.jianshu.com/u/d97fb1f4ca29" target="_blank" class="name">焱玖</a> <!----> <!----> 
+            <div class="meta"><span>3楼 · 2017.12.28 06:54</span></div></div></div> <div class="comment-wrap"><p>写的真好，喜欢😍</p> 
+            <div class="tool-group"><a class=""><i class="iconfont ic-zan"></i> <span>赞</span></a> <a class=""><i class="iconfont ic-comment"></i> 
+            <span>回复</span></a> <a class="report"><span>举报</span></a> <!----></div></div></div> <div class="sub-comment-list">
+            <div id="comment-18974850" class="sub-comment"><p><div data-v-f3bf5228="" class="v-tooltip-container" style="z-index: 0;">
+            <div class="v-tooltip-content"><a href="https://www.jianshu.com/u/53ca58d77138" target="_blank">红颜君</a>：
+            </div> <!----></div> 
+            <span>
+            <a href="https://www.jianshu.com/users/d97fb1f4ca29" class="maleskine-author" target="_blank" data-user-slug="d97fb1f4ca29">@焱玖</a> 谢谢</span></p> 
+            <div class="sub-tool-group"><span>2017.12.28 08:54</span> <a class="">
+            <i class="iconfont ic-comment"></i> <span>回复</span></a> <a class="report"><span>举报</span></a>
+             <!----></div></div> <div class="sub-comment more-comment"><a class="add-comment-btn"><i class="iconfont ic-subcomment">
+             </i> <span>添加新评论</span></a> <!----> <!----> <!----></div> <!---->
+             </div></div></div></div> <!----> <div><!----></div></div>
+             </div>
   </div>
-</div>
 
-	<div class="side-tool">
-		<ul>
-			<li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="回到顶部" style="">
-				<a class="function-button">
-					<i class="iconfont ic-backtop"></i>
-				</a>
-			</li> <!----> <!----> <!----> <!---->
-		</ul>
-	</div>
-
+  <div class="side-tool"><ul><li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="回到顶部" style="display: none;"><a class="function-button"><i class="iconfont ic-backtop"></i></a></li> <li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="将文章加入专题"><a class="js-submit-button"><i class="iconfont ic-addcollectionmodal"></i></a> <!----></li> <li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="收藏文章"><a class="function-button"><i class="iconfont ic-mark"></i></a></li> <li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="分享文章"><a tabindex="0" role="button" data-toggle="popover" data-placement="left" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content="&lt;ul class=&#39;share-list&#39;&gt;
+                &lt;li&gt;&lt;a class=&quot;weixin-share&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-weixin&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到微信&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;http://cwb.assets.jianshu.io/notes/images/21486248/weibo/image_c313db2501d8.jpg&#39;, &#39;推荐 红颜君 的文章《玉魂》（ 分享自 @简书 ）&#39;,&#39;https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weibo&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-weibo&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到微博&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;http://cwb.assets.jianshu.io/notes/images/21486248/weibo/image_c313db2501d8.jpg&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-picture&quot;&gt;&lt;/i&gt;&lt;span&gt;下载长微博图片&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qzone&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 红颜君 的文章《玉魂》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-zone&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到QQ空间&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=twitter&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 红颜君 的文章《玉魂》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-twitter&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=facebook&#39;,x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-facebook&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=google_plus&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-google&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到Google+&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;https://www.jianshu.com/p/af63e35bd6ee?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=douban&#39;)+&#39;&amp;title=&#39;+e(&#39;玉魂&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()&quot;&gt;&lt;i class=&#39;social-icon-sprite social-icon-douban&#39;&gt;&lt;/i&gt;&lt;span&gt;分享到豆瓣&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;" data-original-title="" title="" class="function-button"><i class="iconfont ic-share"></i></a> <!----></li> <!----></ul></div>
+</div> 
