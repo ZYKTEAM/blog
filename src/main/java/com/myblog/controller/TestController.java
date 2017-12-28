@@ -36,6 +36,18 @@ public class TestController {
 //        model.addAttribute("userList",userList);
         return "index/index";
     }
+    
+    
+    /**
+     * 某条内容
+     * @return
+     */
+    @RequestMapping( value = "/indexInfo")
+    public String indexInfo(Model model) {
+//        List<UserEntity> userList = userService.queryList();
+//        model.addAttribute("userList",userList);
+        return "index/index-info";
+    }
 
     /**
      * 访问主页

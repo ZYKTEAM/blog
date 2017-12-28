@@ -1,0 +1,22 @@
+/*
+ * ±‰¡ø
+*/
+.user-follow-button-recommend {
+  float: right;
+  margin-top: 5px;
+  padding: 0;
+  background-color: transparent !important;
+  border-width: 0 !important;
+}
+.user-follow-button-recommend i, .user-follow-button-recommend span {
+    font-size: 12px !important;
+}
+.user-follow-button-recommend span {
+    margin-left: 0 !important;
+}
+.user-follow-button-recommend.normal i, .user-follow-button-recommend.normal span {
+    color: #42C02E !important;
+}
+.user-follow-button-recommend.toggle i, .user-follow-button-recommend.toggle span {
+    color: #969696 !important;
+}
